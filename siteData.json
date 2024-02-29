@@ -7,11 +7,11 @@
       "headings": {
         "about-us": "About Us",
         "project-team": "Project team",
-        "john-doe": "John Doe",
-        "jane-doe": "Jane Doe",
-        "johnny-doe": "Johnny Doe",
-        "jean-doe": "Jean Doe",
-        "james-doe": "James Doe"
+        "ethan-wei-yuxin": "Ethan Wei Yuxin",
+        "sai-utkarsh": "Sai UtKarsh",
+        "titus-chew": "Titus Chew",
+        "wu-xiao-yun": "Wu Xiao Yun",
+        "anant-shanker": "Anant Shanker"
       },
       "headingKeywords": {}
     },
@@ -136,8 +136,48 @@
       "headingKeywords": {}
     },
     {
+      "src": "team/anant.md",
+      "title": "Anant's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/ethanwei.md",
+      "title": "Ethan Wei's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "team/johndoe.md",
       "title": "John Doe's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/sai.md",
+      "title": "Sai's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/titus.md",
+      "title": "Titus' Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/xiaoyun.md",
+      "title": "Xiao Yun's Project Portfolio Page",
       "headings": {
         "project-addressbook-level-3": "Project: AddressBook Level 3"
       },

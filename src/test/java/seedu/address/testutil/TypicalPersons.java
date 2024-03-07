@@ -10,6 +10,8 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_NUSNET_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NUSNET_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_REMARK_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_REMARK_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_FRIEND;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 
@@ -32,6 +34,7 @@ public class TypicalPersons {
             .withNusNet("e0000001")
             .withPhone("94351253")
             .withTags("friends")
+            .withRemark("is alice")
             .build();
     public static final Person BENSON = new PersonBuilder()
             .withName("Benson Meier")
@@ -40,6 +43,7 @@ public class TypicalPersons {
             .withNusNet("e0000002")
             .withPhone("98765432")
             .withTags("owesMoney", "friends")
+            .withRemark("is benson")
             .build();
     public static final Person CARL = new PersonBuilder()
             .withName("Carl Kurz")
@@ -47,6 +51,7 @@ public class TypicalPersons {
             .withEmail("heinz@example.com")
             .withNusNet("e0000003")
             .withAddress("wall street")
+            .withRemark("is carl")
             .build();
     public static final Person DANIEL = new PersonBuilder()
             .withName("Daniel Meier")
@@ -55,6 +60,7 @@ public class TypicalPersons {
             .withAddress("10th street")
             .withNusNet("e0000004")
             .withTags("friends")
+            .withRemark("is daniel")
             .build();
     public static final Person ELLE = new PersonBuilder()
             .withName("Elle Meyer")
@@ -102,6 +108,7 @@ public class TypicalPersons {
             .withNusNet(VALID_NUSNET_AMY)
             .withAddress(VALID_ADDRESS_AMY)
             .withTags(VALID_TAG_FRIEND)
+            .withRemark(VALID_REMARK_AMY)
             .build();
     public static final Person BOB = new PersonBuilder()
             .withName(VALID_NAME_BOB)
@@ -110,6 +117,7 @@ public class TypicalPersons {
             .withNusNet(VALID_NUSNET_BOB)
             .withAddress(VALID_ADDRESS_BOB)
             .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND)
+            .withRemark(VALID_REMARK_BOB)
             .build();
 
     public static final String KEYWORD_MATCHING_MEIER = "Meier"; // A keyword that matches MEIER

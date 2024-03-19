@@ -62,6 +62,7 @@
         "glossary": "Glossary",
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
+        "adding-a-person": "Adding a person",
         "deleting-a-person": "Deleting a person",
         "saving-data": "Saving data"
       },
@@ -117,6 +118,7 @@
         "editing-a-person-edit": "Editing a person : edit",
         "locating-students-by-name-find": "Locating students by name: find",
         "marking-a-student-s-attendance-for-a-given-week-by-their-nusnet-mark": "Marking a student's attendance for a given week by their NUSNet: mark",
+        "unmarking-a-student-s-attendance-for-a-given-week-by-their-nusnet-unmark": "Unmarking a student's attendance for a given week by their NUSNet: unmark",
         "deleting-a-student-delstu": "Deleting a student: delstu",
         "clearing-all-entries-clear": "Clearing all entries : clear",
         "exiting-the-program-exit": "Exiting the program : exit",

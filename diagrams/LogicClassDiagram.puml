@@ -5,22 +5,31 @@ skinparam arrowColor LOGIC_COLOR_T4
 skinparam classBackgroundColor LOGIC_COLOR
 
 package Logic as LogicPackage {
+    package "Parser Classes" as ParserClasses{
+    }
 
-package "Parser Classes" as ParserClasses{
-}
-Class XYZCommand
-Class CommandResult
-Class "{abstract}\nCommand" as Command
+    Class "<<interface>>\nLogic" as Logic
+    Class LogicManager
 
-Class "<<interface>>\nLogic" as Logic
-Class LogicManager
+    package "Command Classes" as CommandPackage {
+        package "Commands Utility Classes" as CommandsUtil {
+        }
+        Class XYZCommand
+        Class CommandResult
+        Class "{abstract}\nCommand" as Command
+    }
 
-package "Commands Utility Classes" as CommandsUtil {
-}
+    package "AutoComplete Classes" as AutoCompletePackage {
+        package "AutoComplete Utility Classes" as AutoCompleteUtil {
+        }
+        class "<<interface>>\nAutoComplete" as AutoComplete
+        class AutoCompleteXYZ
+        note bottom of AutoCompleteXYZ: AutoCompleteXYZ = AutoCompleteCommand, \nAutoCompleteNusNetId, etc
+    }
 }
 
 package Model {
-Class HiddenModel #FFFFFF
+    class HiddenModel #FFFFFF
 }
 
 package Storage {
@@ -32,17 +41,21 @@ HiddenOutside ..> Logic
 LogicManager .right.|> Logic
 LogicManager -right->"1" ParserClasses
 ParserClasses ..> XYZCommand : <<create>>
+ParserClasses ...> AutoCompleteXYZ : <<create>>
 XYZCommand .down.> CommandsUtil
+AutoCompleteXYZ .left.> AutoCompleteUtil
 
 XYZCommand -up-|> Command
+AutoCompleteXYZ .up.|> AutoComplete
 LogicManager .left.> Command : <<call>>
+LogicManager .down..> AutoComplete : <<call>>
 
 LogicManager --> Model
-LogicManager --> Storage
-Storage --[hidden] Model
+LogicManager ----> Storage
+
 Command .[hidden]up.> Storage
 Command .right.> Model
-note right of XYZCommand: XYZCommand = AddCommand, \nFindCommand, etc
+note bottom of XYZCommand: XYZCommand = AddCommand, \nFindCommand, etc
 
 Logic ..> CommandResult
 LogicManager .down.> CommandResult

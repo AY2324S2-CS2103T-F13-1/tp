@@ -168,3 +168,17 @@ h5,
 h6 {
   color: #e46c0a;
 }
+
+.semi-bold {
+    font-weight: 600;
+}
+
+/* Font size for table of contents on print pdf version */
+.page-nav-print {
+    font-size: 1.3em;
+}
+
+.rounded-image {
+    border-radius: 10px;
+    overflow: hidden;
+}

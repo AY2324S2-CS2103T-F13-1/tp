@@ -66,7 +66,8 @@
         "deleting-a-student": "Deleting a student",
         "marking-a-student-s-attendance": "Marking a student's attendance",
         "saving-data": "Saving data",
-        "setting-the-course": "Setting the course"
+        "setting-the-course": "Setting the course",
+        "appendix-design-decisions": "Appendix: Design Decisions"
       },
       "headingKeywords": {}
     },

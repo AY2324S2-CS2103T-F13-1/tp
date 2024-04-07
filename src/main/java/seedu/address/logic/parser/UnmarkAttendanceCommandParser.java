@@ -29,7 +29,10 @@ public class UnmarkAttendanceCommandParser implements Parser<UnmarkAttendanceCom
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
                     UnmarkAttendanceCommand.MESSAGE_USAGE));
         }
-
+        argMultimap.verifyNoDuplicatePrefixesFor(
+                PREFIX_NUSNET,
+                PREFIX_WEEK
+        );
         NusNet nusNet = ParserUtil.parseNusNet(argMultimap.getValue(PREFIX_NUSNET).get());
         WeekNumber weekNumber = ParserUtil.parseWeekNumber(argMultimap.getValue(PREFIX_WEEK).get());
 

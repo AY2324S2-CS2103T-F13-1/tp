@@ -398,6 +398,6 @@ with(this){return _c('p',[_v("Why does "),_c('code',{pre:true,attrs:{"class":"hl
 with(this){return _c('ol',[_c('li',[_v("For our users, using "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit nn/e0123456 nn/e1234567")]),_v(" is unintuitive.")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("INDEX")]),_v(" is visually easier to reference and requires less effort to type.")]),_v(" "),_c('li',[_v("The alternative solution we considered was to disallow editing of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("NUSNet ID")]),_v(", but this would be a limitation on\nthe user's freedom, or would necessitate that the user deletes the student and re-enter all the details again.")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Sun, 7 Apr 2024, 10:57:26 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Sun, 7 Apr 2024, 17:53:20 GMT+8]")])])])}
 }];
   

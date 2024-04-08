@@ -1,0 +1,14 @@
+{# macro allows you to define reusable chunks of content. It is similar to a function in a programming language. #}
+{# Macros are useful only when the the text to format is more than one line.  #}
+{# It takes more time to build the page with macros, but it ensures that things the formatting is more consistent. #}
+
+
+
+{# Define something inside a box #}
+{% macro definitionBox(name, description) %}
+<box type="definition" light>
+
+**{{ name }}**: {{ description }}
+</box>
+
+{% endmacro %}

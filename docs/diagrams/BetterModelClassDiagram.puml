@@ -20,5 +20,5 @@ Person *--> Name
 Person *--> NusNetId
 Person *--> Phone
 Person *--> Email
-Person *--> Address
+Person *--> Major
 @enduml

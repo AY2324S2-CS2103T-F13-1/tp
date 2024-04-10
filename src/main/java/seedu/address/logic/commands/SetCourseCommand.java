@@ -54,6 +54,11 @@ public class SetCourseCommand extends Command {
     }
 
     @Override
+    public boolean isModification() {
+        return true;
+    }
+
+    @Override
     public boolean equals(Object other) {
         if (other == this) {
             return true;

@@ -93,6 +93,11 @@ public class EditPersonCommand extends Command {
         return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPerson)));
     }
 
+    @Override
+    public boolean isModification() {
+        return true;
+    }
+
     /**
      * Creates and returns a {@code Person} with the details of {@code personToEdit}
      * edited with {@code editPersonDescriptor}.
@@ -111,7 +116,6 @@ public class EditPersonCommand extends Command {
         return new Person(updatedName, updatedPhone, updatedEmail, updatedNusNet,
                 updatedMajor, updatedAttendance, updatedTags);
     }
-
     @Override
     public boolean equals(Object other) {
         if (other == this) {
@@ -164,7 +168,6 @@ public class EditPersonCommand extends Command {
             setAttendance(toCopy.attendance);
             setTags(toCopy.tags);
         }
-
         /**
          * Returns true if at least one field is edited.
          */

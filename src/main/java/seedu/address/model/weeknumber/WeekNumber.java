@@ -31,12 +31,6 @@ public class WeekNumber {
     public static boolean isValidWeekNumber(String test) {
         return test.matches(VALIDATION_REGEX);
     }
-
-    @Override
-    public String toString() {
-        return value.toString();
-    }
-
     @Override
     public boolean equals(Object other) {
         if (other == this) {
@@ -54,5 +48,9 @@ public class WeekNumber {
     @Override
     public int hashCode() {
         return value.hashCode();
+    }
+    @Override
+    public String toString() {
+        return value.toString();
     }
 }

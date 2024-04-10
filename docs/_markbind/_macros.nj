@@ -12,3 +12,8 @@
 </box>
 
 {% endmacro %}
+
+
+
+{# Keyboard key formatting #}
+{% macro keyFormat(name, icon='') %}<span class="badge bg-light text-dark border">{% if icon %}{{ icon }} {% endif %}{{ name | upper }}</span>{% endmacro %}

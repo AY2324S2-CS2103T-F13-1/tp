@@ -12,12 +12,8 @@ import seedu.address.logic.attribute.AttributeValueGeneratorManager;
 import seedu.address.logic.autocomplete.AutoComplete;
 import seedu.address.logic.autocomplete.AutoCompleteCommand;
 import seedu.address.logic.autocomplete.AutoCompleteResult;
-import seedu.address.logic.commands.AddPersonCommand;
-import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.CommandResult;
-import seedu.address.logic.commands.DeletePersonCommand;
-import seedu.address.logic.commands.EditPersonCommand;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.parser.AddressBookParser;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -59,10 +55,7 @@ public class LogicManager implements Logic {
         CommandResult commandResult = command.execute(model);
 
         // Update the attributes value generation for prefix autocompletion.
-        if (command instanceof AddPersonCommand
-            || command instanceof DeletePersonCommand
-            || command instanceof EditPersonCommand
-            || command instanceof ClearCommand) {
+        if (command.isModification()) {
             AttributeValueGeneratorManager.updateAddressBook(getAddressBook());
         }
 

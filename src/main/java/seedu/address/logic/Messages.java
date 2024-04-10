@@ -102,7 +102,13 @@ public class Messages {
                 .append("; Major: ")
                 .append(person.getMajor())
                 .append("; Attendance: ");
-        person.getAttendance().forEach(builder::append);
+        String combinedString = person.getAttendance().stream()
+                .map(weekNumber -> weekNumber.toString() + ", ")
+                .collect(Collectors.joining());
+        if (!combinedString.isEmpty()) {
+            combinedString = combinedString.substring(0, combinedString.length() - 2);
+        }
+        builder.append(combinedString);
         builder.append("; Tags: ");
         person.getTags().forEach(builder::append);
         return builder.toString();

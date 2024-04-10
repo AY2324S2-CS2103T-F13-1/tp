@@ -124,6 +124,13 @@
       "title": "User Guide",
       "headings": {
         "tapro-user-guide": "TAPro User Guide",
+        "navigating-this-user-guide": "  Navigating this User Guide",
+        "useful-notations-and-glossary": " Useful Notations and Glossary",
+        "symbols": "Symbols",
+        "keywords": "Keywords",
+        "abbreviations": "Abbreviations",
+        "recognised-prefixes-for-attributes": "Recognised Prefixes for Attributes",
+        "navigating-the-gui": " Navigating the GUI",
         "quick-start": " Quick start",
         "features": " Features",
         "viewing-help-help": " Viewing help : help",

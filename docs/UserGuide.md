@@ -43,7 +43,7 @@ The latest version is compatible with older versions.
 
 A GUI similar to the below image should appear in a few seconds. Note how the app contains some sample data.
 
-<img alt="Main Window UI on first launch" src="images/main_window_ui.png" class="rounded-image" />
+<img alt="Main Window UI on first launch" src="images/excalidrawUG/inital_launch_final.png" class="rounded-image" />
 
 </box>
 <div style="page-break-after: always;"></div>

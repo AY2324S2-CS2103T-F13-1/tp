@@ -17,7 +17,7 @@ Class CourseName
 Class UniquePersonList
 Class Person
 Class NusNetId
-Class Address
+Class Major
 Class Email
 Class Name
 Class Phone
@@ -47,7 +47,7 @@ Person *--> Name
 Person *--> NusNetId
 Person *--> Phone
 Person *--> Email
-Person *--> Address
+Person *--> Major
 Person *--> "*" Tag
 Person *--> "*" WeekNumber
 
@@ -56,8 +56,8 @@ UniquePersonList -[hidden]right-> I
 
 Name -[hidden]right-> NusNetId
 NusNetId -[hidden]right-> Phone
-Phone -[hidden]right-> Address
-Address -[hidden]right-> Email
+Phone -[hidden]right-> Major
+Major -[hidden]right-> Email
 
 ModelManager --> "~* filtered" Person
 @enduml

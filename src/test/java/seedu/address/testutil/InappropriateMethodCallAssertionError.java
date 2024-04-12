@@ -1,4 +1,4 @@
-package seedu.address.logic.commands.exceptions;
+package seedu.address.testutil;
 
 /**
  * InappropriateMethodCallAssertionError extends AssertionError to provide a more specific error indication

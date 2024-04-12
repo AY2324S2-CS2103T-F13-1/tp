@@ -23,10 +23,10 @@ public class SetCourseCommand extends Command {
 
     public static final String MESSAGE_USAGE = CommandMessageUsageUtil.generateMessageUsage(
             COMMAND_WORD,
-            "Sets the course name. ",
+            "Sets the course code. ",
             PARAMETER_COURSE_CODE);
 
-    public static final String MESSAGE_SUCCESS = "Successfully updated course name";
+    public static final String MESSAGE_SUCCESS = "Successfully updated course code";
 
 
     private final Course course;

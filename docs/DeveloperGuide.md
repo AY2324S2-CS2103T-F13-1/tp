@@ -571,6 +571,7 @@ For all use cases below, the **System** is TAPro and the **Actor** is the user, 
 {{ macros.definitionBox('CLI', 'Command Line Interface') }}
 {{ macros.definitionBox('UI', 'User Interface') }}
 {{ macros.definitionBox('GUI', 'Graphical User Interface') }}
+{{ macros.definitionBox('ASCIIbetical Order', 'An ordering where numbers and most punctuations are before letters, and uppercase letters before lowercase letters.') }}
 
 {{ newPage }}
 
@@ -806,6 +807,8 @@ Expected: TAPro's main window's title contains the course code `CS2103` provided
 
 ## **Appendix: Design Decisions**
 
+<br>
+
 1. **Why does `edit` command use `INDEX` as identifier instead of `NUSNET`?**
     1. For our users, using `edit nn/E0123456 nn/E1234567` is unintuitive to edit the NUSNet ID of a student.
     1. `INDEX` is visually easier to reference and requires less effort to type.
@@ -818,6 +821,82 @@ Expected: TAPro's main window's title contains the course code `CS2103` provided
    **Note:** `delstu` command uses `NUSNET` as identifier because it requires more intentional effort and
    therefore ensures that the TA intends to perform this dangerous action.
    </box>
+   <br>
+
+1. **Why does autocomplete sort in [ASCIIbetical order](https://en.wikipedia.org/wiki/ASCII#Character_order) and not normal alphabetical order?**
+   1. The only difference ASCIIbetical order has from normal alphabetical order, is that uppercase letters are ordered before lowercase letters.
+   2. For most parameters this doesn't make a difference, due to case-insensitivity or validation checks that enforce a certain format.
+   3. But for the tag parameter, `TAG`, it is case-sensitive, so `LATE` and `late` are two different tags.
+   4. A user can use uppercase for emphasis and to give priority to that tag, in the autocompletion order, thus allowing the user to autocomplete a certain tag more easily, and without much hassle.
+
+    <br>
+    <box type="success" light>
+
+    **#g#Example:##** If a user uses the following tags: `LATE`, `early`, `onTime`, to tag their students based on their latest submission, then `LATE` would appear before `early` and `onTime` in the autocompletion of a blank tag parameter.
+     </box>
+
+   5. The alternative solution we considered was to use normal alphabetical ordering, but this meant that there would not be priority given to uppercase tags, without explicitly adding a number before that tag, which is less intuitive.
+   6. Another alternative solution we considered was to allow the user to set the priority of the values in the autocompletion, but this meant adding unnecessary verbosity to the command format, which may not be that intuitive for new users.
+   <br><br>
+     
+1. **Why does autocompletion only give values that are already present instead of predicting the next result?**
+   1. It is performance intensive to predict the next autocompletion based on all possible values.
+   2. It will also use up significant storage space to store the possible autocompletions, which would not meet the application size requirements required for this course.
+   3. Moreover, autocompletion of certain unused words may be redundant, as not all words would be even used.
+   4. Hence, we decided to just perform autocompletion based on the available values that are stored in TAPro, as it increases the usefulness of this feature in this context.
+
+   <br>
+
+1. **Why does autocomplete not work when the command input box is empty?**
+   1. The alternative solution we considered is when the command input box is empty, autocomplete scrolls through all possible commands. However, it has a few issues.
+   2. It is much faster typing out the first few letters of the command you want to autocomplete, and then autocompleting, since regular users would remember the commands to use.
+   3. If it was a new user, then the new user would refer to help and our user guide instead of using the autocomplete to see what options there are.
+   4. Moreover, for the new user, the autocomplete feature may be confusing at first, so by omitting autocomplete on an empty input, it prevents accidental misunderstandings on what {{ macros.keyFormat('Tab') }} should do.
+   5. Furthermore, we do not want new users to execute a command without understanding what it did first, as it may cause irreversible data loss (`clear` command). We wanted a new user to understand the command, by referring to help or our user guide on what a command did, in order to prevent a situation where data is accidentally lost.
+
+
+<div style="page-break-after: always;"></div>
+
+5. **Why are placeholder values valid input?**
+    1. There is no simple way to edit a student's optional attribute back to the default without the using placeholder value (`X not provided`, where X is the attribute), without having to perform two commands: delete the student and add back the student if a value was incorrectly filled when it is not available to the user.
+    2. With autocompletion, a user can easily fill in the placeholder value, so it is much easier to set an attribute back to the placeholder value.
+
+    <br>
+    <box type="success" light>
+
+   **#g#Example:##** If a user doesn't have all phone numbers, then the parameter value `Phone number not provided` may be a possible value that they will use later on, and so the autocomplete helps make the process easier for the user to reset the value if necessary.
+   </box>
+
+    3. Hence, we allowed the placeholder value as valid input to serve this purpose.
+    4. The alternative solution we considered was to leave the parameter value empty to set it back to the default, but there is an issue with it. Users may accidentally set the parameter value as empty, resulting in the accidental lost of an attribute's value.
+    5. As there is no way to undo this change easily, we decided to use the placeholder value for this purpose, so that in order to reset an attribute, the user has to intentionally want to do so, by typing out the full placeholder value (`X not provided`, where X is the attribute).
+
+   <br>
+   <box type="success" light>
+
+   **#g#Example:##** Assuming we used the alternative solution, if a user inputs `edit 1 p/` and accidentally presses enter, then the phone number of the student at index 1 in the user's contact list would be erased to `Phone number not provided`.
+
+   Although this was the user's accidental mistake, it resulted in the user needing to do more work to restore back the change. Hence, we decided to use the placeholder value, so that the user will be less likely to accidentally reset an attribute by mistake.
+   </box>
+
+    6. Furthermore, autocomplete has placeholder values present only when they are necessary, which helps against accidentally removing an optional attribute of a student.
+
+    <br>
+    <box type="success" light>
+
+   **#g#Example:##** Usually, if a user would store all phone numbers or no phone numbers at all, depending on their needs.
+
+   If a user has all phone numbers present, then the parameter value `Phone number not provided` would not be available as an autocompletion, to prevent accidental lost of a student's phone number by mistake.
+   </box>
+   <br>
+
+6. **Why does command history toggle only retrieve successful commands?**
+   1. The alternative we considered was to store the history of all command inputs.
+   2. However, unsuccessful command inputs are not that helpful to a user, and it only clutters up a user's command history, resulting in more time wasted searching for a successful command input.
+   3. Hence, storing only successful command inputs in the command history enabled users to be more efficient at using TAPro.
+   <br>
+
+
 
 {{ newPage }}
 

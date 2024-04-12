@@ -102,6 +102,10 @@ public class CommandBox extends UiPart<Region> {
 
     private void handleKeyPressEvent(KeyEvent e) {
         previousKeyCodePressed = e.getCode();
+
+        // handle certain key events that update text in a different order
+        updateLastModifiedText(commandTextField.getText());
+
         switch (e.getCode()) {
         case TAB:
             handleTabKeyPressEvent(e);

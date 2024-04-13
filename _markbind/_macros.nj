@@ -17,3 +17,10 @@
 
 {# Keyboard key formatting #}
 {% macro keyFormat(name, icon='') %}<span class="badge bg-light text-dark border">{% if icon %}{{ icon }} {% endif %}{{ name | upper }}</span>{% endmacro %}
+
+
+
+
+{# semi bold text #}
+{% macro semiBold(text) %}<span class="semi-bold">{{ text }}</span>{% endmacro %}
+

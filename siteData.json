@@ -129,6 +129,7 @@
         "symbols": "Symbols",
         "keywords": "Keywords",
         "abbreviations": "Abbreviations",
+        "command-format": "Command Format",
         "recognized-prefixes-for-attributes": "Recognized Prefixes for Attributes",
         "navigating-the-gui": " Navigating the GUI",
         "quick-start": " Quick start",

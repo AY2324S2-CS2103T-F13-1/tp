@@ -1,0 +1,32 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Command History UI_COLOR_T2
+participant ":CommandBox" as Model UI_COLOR_T3
+participant ":CommandHistory" as ModelCH UI_COLOR_T3
+end box
+
+[-> Model : keyPress(e)
+activate Model
+
+Model -> Model : handleKeyPressEvent(e)
+Model -> Model : handleArrowKeyPress(e)
+activate Model
+Model -> ModelCH : getInstance()
+activate ModelCH
+ModelCH --> Model :
+deactivate ModelCH
+
+Model -> ModelCH : getCommandHistory(direction)
+activate ModelCH
+
+ModelCH --> Model : previousCommand
+deactivate ModelCH
+
+Model -> Model : setText(previousCommand)
+
+[<-- Model
+deactivate Model
+
+@enduml

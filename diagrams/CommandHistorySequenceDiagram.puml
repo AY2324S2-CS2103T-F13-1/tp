@@ -2,9 +2,9 @@
 !include style.puml
 skinparam ArrowFontStyle plain
 
-box Command History UI_COLOR_T2
-participant ":CommandBox" as Model UI_COLOR_T3
-participant ":CommandHistory" as ModelCH UI_COLOR_T3
+box UI UI_COLOR_T1
+participant ":CommandBox" as Model UI_COLOR
+participant ":CommandHistory" as ModelCH UI_COLOR
 end box
 
 [-> Model : keyPress(e)

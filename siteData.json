@@ -170,7 +170,7 @@
       "headingKeywords": {}
     },
     {
-      "src": "team/anant.md",
+      "src": "team/anant1902.md",
       "title": "Anant's Project Portfolio Page",
       "headings": {
         "project-addressbook-level-3": "Project: AddressBook Level 3"
@@ -178,8 +178,16 @@
       "headingKeywords": {}
     },
     {
-      "src": "team/ethanwei.md",
+      "src": "team/belligerentbeagle.md",
       "title": "Ethan Wei's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/foraeons.md",
+      "title": "Xiaoyun's Project Portfolio Page",
       "headings": {
         "project-addressbook-level-3": "Project: AddressBook Level 3"
       },
@@ -194,7 +202,7 @@
       "headingKeywords": {}
     },
     {
-      "src": "team/sai.md",
+      "src": "team/saiutkarsh33.md",
       "title": "Sai's Project Portfolio Page",
       "headings": {
         "project-addressbook-level-3": "Project: AddressBook Level 3"
@@ -202,18 +210,10 @@
       "headingKeywords": {}
     },
     {
-      "src": "team/titus.md",
+      "src": "team/tituschewxj.md",
       "title": "Titus' Project Portfolio Page",
       "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
-      },
-      "headingKeywords": {}
-    },
-    {
-      "src": "team/xiaoyun.md",
-      "title": "Xiaoyun's Project Portfolio Page",
-      "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
+        "project-tapro": "Project: TAPro"
       },
       "headingKeywords": {}
     }

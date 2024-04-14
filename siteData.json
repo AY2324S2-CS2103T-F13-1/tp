@@ -121,7 +121,6 @@
     },
     {
       "src": "UserGuide.md",
-      "title": "User Guide",
       "headings": {
         "tapro-user-guide": "TAPro User Guide",
         "navigating-this-user-guide": "  Navigating this User Guide",

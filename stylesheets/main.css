@@ -182,3 +182,8 @@ h6 {
     border-radius: 10px;
     overflow: hidden;
 }
+
+.fit-container {
+    width: 100%;
+    object-fit: contain;
+}

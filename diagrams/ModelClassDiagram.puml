@@ -43,13 +43,13 @@ UserPrefs .up.|> ReadOnlyUserPrefs
 
 AddressBook *--> "1" UniquePersonList
 UniquePersonList --> "~* all" Person
-Person *--> Name
-Person *--> NusNetId
-Person *--> Phone
-Person *--> Email
-Person *--> Major
-Person *--> "*" Tag
-Person *--> "*" WeekNumber
+Person *---> Name
+Person *---> NusNetId
+Person *---> Phone
+Person *---> Email
+Person *---> Major
+Person *---> "*" Tag
+Person *---> "*" WeekNumber
 
 Person -[hidden]up--> I
 UniquePersonList -[hidden]right-> I

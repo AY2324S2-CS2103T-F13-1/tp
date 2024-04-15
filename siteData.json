@@ -54,7 +54,6 @@
         "autocomplete-feature": "Autocomplete Feature",
         "command-history-retrieval": "Command History Retrieval",
         "proposed-undo-redo-feature": "[Proposed] Undo/Redo Feature",
-        "proposed-data-archiving": "[Proposed] Data archiving",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
@@ -75,7 +74,6 @@
         "retrieving-previous-successful-commands": "Retrieving previous successful commands",
         "accessing-help": "Accessing help",
         "clearing-all-data": "Clearing all data",
-        "saving-data": "Saving data",
         "appendix-design-decisions": "Appendix: Design Decisions",
         "appendix-effort": "Appendix: Effort",
         "appendix-planned-enhancements": "Appendix: Planned Enhancements"

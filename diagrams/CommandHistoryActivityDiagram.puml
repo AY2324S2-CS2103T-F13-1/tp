@@ -1,0 +1,29 @@
+@startuml
+skin rose
+skinparam ActivityFontSize 15
+skinparam ArrowFontSize 12
+start
+
+
+:Input field is empty;
+
+if () then ([up or down arrow key pressed])
+    :Retrieves previousCommand
+    from CommandHistory
+    if available;
+    note
+      previousCommand is a generic variable
+      representing a command from CommandHistory.
+      Therefore it can contain an older or nere
+      command depending on the current command
+    end note
+    :previousCommand fills Input field;
+else ([else])
+    :User enters command in Input field;
+endif
+:User executes command;
+:Command saved in CommandHistory;
+:Input field is cleared;
+
+stop
+@enduml

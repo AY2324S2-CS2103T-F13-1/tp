@@ -158,7 +158,7 @@ with(this){return _c('div',{staticClass:"d-print-none"},[_c('hr')])}
 with(this){return _c('h3',{attrs:{"id":"listing-all-students-list"}},[_c('i',{staticClass:"fa-solid fa-list-ul"}),_v(" Listing all students : "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("list")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#listing-all-students-list","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("If there are additional arguments behind "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("list")]),_v(" we will simply ignore them.")])}
+with(this){return _c('p',[_v("Additional arguments after "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("list")]),_v(" will be simply ignored.")])}
 },function anonymous(
 ) {
 with(this){return _c('div',{staticClass:"d-print-none"},[_c('hr')])}
@@ -281,6 +281,6 @@ with(this){return _c('h3',{attrs:{"id":"using-tapro"}},[_v("Using TAPro"),_c('a'
 with(this){return _c('h3',{attrs:{"id":"saving-more-time"}},[_v("Saving More Time"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#saving-more-time","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Mon, 15 Apr 2024, 17:03:36 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Mon, 15 Apr 2024, 17:22:49 GMT+8]")])])])}
 }];
   

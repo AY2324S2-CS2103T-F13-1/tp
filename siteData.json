@@ -24,6 +24,13 @@
       "headingKeywords": {}
     },
     {
+      "src": "DGContentPage.md",
+      "headings": {
+        "table-of-contents": "Table of Contents"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "DevOps.md",
       "title": "DevOps guide",
       "headings": {
@@ -41,6 +48,7 @@
       "title": "Developer Guide",
       "headings": {
         "tapro-developer-guide": "TAPro Developer Guide",
+        "table-of-contents": "Table of Contents",
         "acknowledgements": "Acknowledgements",
         "setting-up-getting-started": "Setting up, getting started",
         "design": "Design",
@@ -118,10 +126,18 @@
       "headingKeywords": {}
     },
     {
+      "src": "UGContentPage.md",
+      "headings": {
+        "table-of-contents": " Table of Contents"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "UserGuide.md",
       "title": "User Guide",
       "headings": {
         "tapro-user-guide": "TAPro User Guide",
+        "table-of-contents": " Table of Contents",
         "navigating-this-user-guide": "  Navigating this User Guide",
         "useful-notations-and-glossary": " Useful Notations and Glossary",
         "symbols": "Symbols",

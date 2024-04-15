@@ -1,0 +1,47 @@
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor LOGIC_COLOR_T4
+skinparam classBackgroundColor LOGIC_COLOR
+
+package Logic as LogicPackage {
+    class "<<interface>>\nLogic" as Logic
+    class LogicManager
+
+    package "Attribute Classes" as AttributePackage {
+        class PrefixResolver
+        class "<<class>>\nPrefixResolverSyntax" as PrefixResolverSyntax
+        class AttributeTrie
+        class "<<class>>\nAttributeValueGeneratorManager" as AVGManager
+        PrefixResolverSyntax .right.> PrefixResolver
+        PrefixResolver *-->"1" AttributeTrie
+        PrefixResolverSyntax <..> AVGManager
+
+        LogicManager ..up> AVGManager: updates >
+    }
+
+    package "AutoComplete Classes" as AutoCompletePackage {
+        class "<<interface>>\nAutoComplete" as AutoComplete
+        class AutoCompleteCommand
+        class AutoCompletePrefixResolver
+        class AutoCompleteResult
+        AutoCompleteCommand .up.|> AutoComplete
+        AutoCompletePrefixResolver .up.|> AutoComplete
+        AutoCompleteCommand .down.> AutoCompleteResult: produces >
+        AutoCompletePrefixResolver .down.> AutoCompleteResult: produces >
+
+        LogicManager ..up> AutoCompleteResult
+    }
+
+    package "Parser Classes" as ParserPackage {
+        class Prefix
+        class AddressBookParser
+    }
+
+    AddressBookParser .> AutoComplete: creates >
+    LogicManager -left-|> Logic
+    LogicManager *-->"1" AddressBookParser
+    PrefixResolver -up->"1" Prefix
+    AutoCompletePrefixResolver -down>"*" PrefixResolver
+}
+@enduml

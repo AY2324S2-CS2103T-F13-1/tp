@@ -17,15 +17,18 @@ package Logic as LogicPackage {
         Class XYZCommand
         Class CommandResult
         Class "{abstract}\nCommand" as Command
+        note right of XYZCommand: XYZCommand = AddPersonCommand, \nFindPersonCommand, etc
+        XYZCommand -up-|> Command
+        XYZCommand .down.> CommandsUtil
+        Command .> CommandResult : creates >
     }
 
-    package "AutoComplete Classes" as AutoCompletePackage {
-        package "AutoComplete Utility Classes" as AutoCompleteUtil {
-        }
-        class "<<interface>>\nAutoComplete" as AutoComplete
-        class AutoCompleteXYZ
-        note bottom of AutoCompleteXYZ: AutoCompleteXYZ = AutoCompleteCommand, \nAutoCompleteNusNetId, etc
-    }
+    LogicManager .up|> Logic
+    LogicManager -up> ParserClasses
+    LogicManager ..> Command : calls >
+    LogicManager ..> CommandResult
+    ParserClasses .down> XYZCommand : creates >
+    Logic ..> CommandResult
 }
 
 package Model {
@@ -33,31 +36,14 @@ package Model {
 }
 
 package Storage {
+    class HiddenModel #FFFFFF
 }
 
 Class HiddenOutside #FFFFFF
-HiddenOutside ..> Logic
+HiddenOutside .down.> Logic
 
-LogicManager .right.|> Logic
-LogicManager -right->"1" ParserClasses
-ParserClasses ..> XYZCommand : <<create>>
-ParserClasses ...> AutoCompleteXYZ : <<create>>
-XYZCommand .down.> CommandsUtil
-AutoCompleteXYZ .left.> AutoCompleteUtil
-
-XYZCommand -up-|> Command
-AutoCompleteXYZ .up.|> AutoComplete
-LogicManager .left.> Command : <<call>>
-LogicManager .down..> AutoComplete : <<call>>
-
-LogicManager --> Model
-LogicManager ----> Storage
-
-Command .[hidden]up.> Storage
+LogicManager -down-> Model
+LogicManager -right> Storage
 Command .right.> Model
-note bottom of XYZCommand: XYZCommand = AddCommand, \nFindCommand, etc
 
-Logic ..> CommandResult
-LogicManager .down.> CommandResult
-Command .up.> CommandResult : <<create>>
 @enduml

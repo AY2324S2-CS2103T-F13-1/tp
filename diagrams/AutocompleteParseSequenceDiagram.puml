@@ -1,0 +1,45 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+    participant ":LogicManager" as LogicManager LOGIC_COLOR
+    participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+    participant ":AutoCompleteCommand" as AutoCompleteCommand LOGIC_COLOR
+    participant ":AutoCompletePrefixResolver" as ACPrefixResolver LOGIC_COLOR
+end box
+
+mainframe **sd** get AutoCompleteResult from commandText
+
+[-> LogicManager: autoComplete(commandText)
+activate LogicManager
+
+LogicManager -> AddressBookParser: parseAutoComplete(commandText)
+activate AddressBookParser
+
+alt cannot parse commandText
+
+ref over AddressBookParser
+create empty autocomplete
+end ref
+
+else prefix absent in commandText
+
+create AutoCompleteCommand
+AddressBookParser -> AutoCompleteCommand: AutoCompleteCommand()
+activate AutoCompleteCommand
+return
+
+else prefix present in commandText
+
+create ACPrefixResolver
+AddressBookParser -> ACPrefixResolver: AutoCompletePrefixResolver(ALL_PREFIX_RESOLVERS)
+activate ACPrefixResolver
+return
+
+end
+
+return AutoComplete
+
+return AutoCompleteResult
+@enduml

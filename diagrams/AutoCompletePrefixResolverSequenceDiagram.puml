@@ -1,0 +1,44 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+    participant ":AutoCompletePrefixResolver" as ACPrefixResolver LOGIC_COLOR
+    participant ":AutoCompleteResult" as AutoCompleteResult LOGIC_COLOR
+end box
+
+[-> ACPrefixResolver: getAutoComplete(input)
+activate ACPrefixResolver
+
+alt input is blank
+
+ref over ACPrefixResolver
+create empty autocomplete
+end ref
+
+else else
+ACPrefixResolver -> ACPrefixResolver: findTriePrefixContinuation(input)
+activate ACPrefixResolver
+
+ref over ACPrefixResolver
+find trie prefix continuation
+end ref
+
+return trieMatchContinuations
+
+alt trieMatchContinuations is empty
+
+ref over ACPrefixResolver
+create empty autocomplete
+end ref
+
+else else
+
+create AutoCompleteResult
+ACPrefixResolver -> AutoCompleteResult: AutoCompleteResult(trieMatchContinuations)
+activate AutoCompleteResult
+return AutoCompleteResult
+end
+end
+return AutoCompleteResult
+@enduml

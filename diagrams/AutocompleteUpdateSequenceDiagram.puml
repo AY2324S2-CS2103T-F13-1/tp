@@ -1,0 +1,36 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+    participant ":LogicManager" as LogicManager LOGIC_COLOR
+    participant "<<class>>\nAttributeValueGeneratorManager" as AVGManager LOGIC_COLOR
+    participant ":PrefixResolver" as PrefixResolver LOGIC_COLOR
+    participant ":AttributeTrie" as AttributeTrie LOGIC_COLOR
+end box
+
+[-> LogicManager: execute(commandText)
+activate LogicManager
+
+opt command modifies addressBook
+
+LogicManager -> LogicManager: getAddressBook()
+activate LogicManager
+return addressBook
+LogicManager -> AVGManager : updateAddressBook(addressBook)
+activate AVGManager
+
+'notify outdated data
+note right of AVGManager: Iterates through a collection of PrefixResolvers and their AttributeTries
+loop for each PrefixResolver
+    AVGManager -> PrefixResolver: notifyOutdatedData
+    activate PrefixResolver
+    PrefixResolver -> AttributeTrie: clearCache()
+    activate AttributeTrie
+    return
+    return
+end
+return
+end
+deactivate LogicManager
+@enduml

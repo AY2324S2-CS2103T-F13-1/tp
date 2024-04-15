@@ -1,0 +1,43 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+    participant ":AutoCompletePrefixResolver" as ACPrefixResolver LOGIC_COLOR
+    participant ":PrefixResolver" as PrefixResolver LOGIC_COLOR
+    participant ":AttributeTrie" as AttributeTrie LOGIC_COLOR
+end box
+mainframe **sd** find trie prefix continuation
+
+[-> ACPrefixResolver: findTriePrefixContinuation(input)
+activate ACPrefixResolver
+
+ACPrefixResolver -> ACPrefixResolver: findLastPrefixIndex(input)
+activate ACPrefixResolver
+return indexOfLastPrefix
+
+ACPrefixResolver -> ACPrefixResolver: findLastPrefix(input, indexOfLastPrefix)
+activate ACPrefixResolver
+return lastPrefix
+
+note right of ACPrefixResolver: Iterates through a collection of PrefixResolvers and their AttributeTries
+loop for all PrefixResolvers
+
+opt lastPrefix equals PrefixResolver's prefix
+
+ACPrefixResolver -> PrefixResolver: resolvePrefix(partialValue)
+activate PrefixResolver
+PrefixResolver -> AttributeTrie: findAllValuesWithPrefix(partialValue)
+activate AttributeTrie
+opt trieCache is absent
+AttributeTrie -> AttributeTrie: generateTrie()
+activate AttributeTrie
+return trie
+end
+return list of values with prefix
+return list of values with prefix
+end
+end loop
+
+return trieMatchContinuations
+@enduml
